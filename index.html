@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Net-Prime | Frontend Güvenliği Tezi</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="background-overlay" id="bg-overlay"></div>
+
+    <div class="container" id="auth-container">
+        <div id="register-card" class="auth-card">
+            <h2>Kayıt Ol</h2>
+            <form id="register-form">
+                <input type="text" placeholder="Kullanıcı Adı" required>
+                <input type="email" placeholder="E-posta Adresi" required>
+                <input type="date" placeholder="Doğum Tarihi" required>
+                <input type="password" placeholder="Şifre" required>
+                <button type="submit">Hesap Oluştur</button>
+            </form>
+            <p>Zaten üye misiniz? <a href="#" onclick="showLogin()">Giriş Yap</a></p>
+        </div>
+
+        <div id="login-card" class="auth-card hidden">
+            <h2>Oturum Aç</h2>
+            <form id="login-form">
+                <input type="text" id="login-username" placeholder="Kullanıcı Adı" required>
+                <input type="password" id="login-pass" placeholder="Şifre" required>
+                
+                <div class="captcha-container">
+                    <div id="captcha-code" class="captcha-box noselect"></div>
+                    <button type="button" id="refresh-captcha">↻</button>
+                </div>
+                <input type="text" id="captcha-input" placeholder="Güvenlik Kodunu Doğrulayın" required>
+                
+                <button type="submit">Giriş</button>
+            </form>
+            <p>Yeni misiniz? <a href="#" onclick="showRegister()">Şimdi Kaydol</a></p>
+        </div>
+    </div>
+
+    <div id="main-portal" class="hidden">
+        <header class="navbar">
+            <h1 class="logo">NET-PRIME</h1>
+            <nav>
+                <button id="logout-btn">Güvenli Çıkış</button>
+            </nav>
+        </header>
+
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Siber Güvenlik Dünyası</h1>
+                <p>Tez Konusu: Web Tabanlı Programlarda Frontend Güvenliği ve CAPTCHA Mekanizmaları.</p>
+            </div>
+        </section>
+
+        <section class="movie-section">
+            <h3>Öne Çıkan 8 Film</h3>
+            <div class="movie-grid" id="movie-grid">
+                </div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
